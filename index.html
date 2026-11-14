@@ -67,6 +67,7 @@
       touch-action: none;
     }
 
+    /* Scrollbars */
     .scroll-area {
       overflow-y: auto;
       scrollbar-width: thin;
@@ -96,6 +97,7 @@
       margin: 0 auto;
     }
 
+    /* Loading Screen */
     #loading-screen {
       position: fixed;
       inset: 0;
@@ -148,6 +150,7 @@
       color: var(--text-muted);
     }
 
+    /* Buttons & Inputs */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -205,6 +208,7 @@
     .btn-purple { border-color: rgba(189, 0, 255, 0.45); color: #f0abfc; }
     .btn-purple:hover:not(:disabled) { border-color: #e879f9; color: #fae8ff; }
 
+    /* Cyberpunk Reset Progress Button */
     .btn-reset-cyber {
       position: relative;
       height: 40px;
@@ -227,6 +231,7 @@
       box-shadow: 0 0 22px rgba(244, 63, 94, 0.5);
     }
 
+    /* Header Bar */
     .top-header {
       display: flex;
       flex-wrap: wrap;
@@ -257,6 +262,7 @@
       flex-wrap: wrap;
     }
 
+    /* Menu Hero Layout */
     .menu-grid {
       flex: 1;
       display: grid;
@@ -333,6 +339,7 @@
       color: var(--text-muted);
     }
 
+    /* Mode Select & Garage Grids */
     .cards-grid-3 {
       display: grid;
       grid-template-columns: 1fr;
@@ -425,6 +432,7 @@
     .tier-seg { flex: 1; height: 6px; border-radius: 2px; background: #1e293b; }
     .tier-seg.filled { background: var(--cyan); box-shadow: 0 0 8px rgba(0, 243, 255, 0.6); }
 
+    /* Achievements Grid */
     .ach-grid {
       margin-top: 20px;
       display: grid;
@@ -446,6 +454,7 @@
       background: rgba(69, 26, 3, 0.25);
     }
 
+    /* In-Game HUD */
     #game-hud {
       position: fixed;
       inset: 0;
@@ -574,6 +583,7 @@
       color: #ffffff;
     }
 
+    /* Mobile Touch Controls */
     #mobile-controls {
       position: fixed;
       inset-x: 0;
@@ -630,6 +640,7 @@
       transform: scale(0.95);
     }
 
+    /* Modals */
     .modal-backdrop {
       position: fixed;
       inset: 0;
@@ -671,6 +682,7 @@
 <div id="app-root">
   <canvas id="gameCanvas"></canvas>
 
+  <!-- Loading Screen -->
   <div id="loading-screen">
     <div class="loading-box">
       <div class="loading-kicker">Void Striker Ultimate Edition</div>
@@ -683,6 +695,7 @@
     </div>
   </div>
 
+  <!-- Main Menu -->
   <section id="screen-menu" class="screen scroll-area hidden">
     <div class="container" style="display:flex;flex-direction:column;min-height:100%;justify-content:space-between;">
       <header class="top-header">
@@ -760,6 +773,7 @@
     </div>
   </section>
 
+  <!-- Mode Select Screen -->
   <section id="screen-modes" class="screen scroll-area hidden">
     <div class="container">
       <div class="top-header">
@@ -772,7 +786,9 @@
         </div>
         <button type="button" id="btn-launch-selected-mode" class="btn btn-primary">Launch Mode</button>
       </div>
+
       <div id="modes-grid" class="cards-grid-3"></div>
+
       <div id="challenge-mutator-panel" class="card hidden" style="margin-top:18px;border-color:rgba(56,189,248,0.4);">
         <div class="font-display" style="font-size:13px;font-weight:800;color:#7dd3fc;text-transform:uppercase;">
           Challenge Ops Mutator
@@ -782,6 +798,7 @@
     </div>
   </section>
 
+  <!-- Ship Garage Screen -->
   <section id="screen-garage" class="screen scroll-area hidden">
     <div class="container">
       <div class="top-header">
@@ -841,6 +858,7 @@
     </div>
   </section>
 
+  <!-- Achievements Screen -->
   <section id="screen-achievements" class="screen scroll-area hidden">
     <div class="container">
       <div class="top-header">
@@ -857,6 +875,7 @@
     </div>
   </section>
 
+  <!-- In-Game HUD -->
   <div id="game-hud" class="hidden">
     <div>
       <div class="hud-row">
@@ -936,6 +955,7 @@
     </div>
   </div>
 
+  <!-- Banner Alerts -->
   <div id="banner-container" class="hidden">
     <div id="banner-box" class="banner-box">
       <div id="banner-title" class="font-display" style="font-size:16px;font-weight:900;color:#fff;"></div>
@@ -943,6 +963,7 @@
     </div>
   </div>
 
+  <!-- Mobile Controls -->
   <div id="mobile-controls" class="hidden">
     <div id="joy-pad" class="joystick-pad">
       <div id="joy-knob" class="joystick-knob"></div>
@@ -950,6 +971,7 @@
     <button type="button" id="btn-touch-fire" class="fire-pad">FIRE</button>
   </div>
 
+  <!-- Pause Modal -->
   <div id="modal-pause" class="modal-backdrop hidden">
     <div class="modal-card" style="text-align:center;">
       <div style="font-size:11px;letter-spacing:0.22em;color:#22d3ee;text-transform:uppercase;">Mission Suspended</div>
@@ -964,6 +986,7 @@
     </div>
   </div>
 
+  <!-- Game Over / Victory Modal -->
   <div id="modal-run-end" class="modal-backdrop hidden">
     <div id="run-end-card" class="modal-card wide" style="text-align:center;">
       <div id="end-kicker" style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;font-weight:700;"></div>
@@ -1005,6 +1028,7 @@
     </div>
   </div>
 
+  <!-- Settings Modal -->
   <div id="modal-settings" class="modal-backdrop hidden">
     <div class="modal-card wide">
       <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(148,163,184,0.18);padding-bottom:12px;">
@@ -1019,6 +1043,15 @@
         <div class="setting-row">
           <span style="font-weight:600;">Master Audio</span>
           <button type="button" id="btn-set-mute" class="btn" style="height:36px;"></button>
+        </div>
+        <div style="border-top:1px solid rgba(148,163,184,0.16);padding-top:10px;">
+          <div style="font-size:12px;color:#cbd5e1;font-weight:600;margin-bottom:8px;">Sky War Soundtrack Mode</div>
+          <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px;">
+            <button type="button" class="btn set-track-btn" data-track="dynamic" style="height:36px;font-size:11px;">Auto Dynamic</button>
+            <button type="button" class="btn set-track-btn" data-track="afterburner" style="height:36px;font-size:11px;">Afterburner</button>
+            <button type="button" class="btn set-track-btn" data-track="anthem" style="height:36px;font-size:11px;">Sky Anthem</button>
+            <button type="button" class="btn set-track-btn" data-track="siege" style="height:36px;font-size:11px;">Siege Boss</button>
+          </div>
         </div>
         <div>
           <div style="display:flex;justify-content:space-between;font-size:12px;color:#94a3b8;margin-bottom:4px;">
@@ -1066,6 +1099,7 @@
     </div>
   </div>
 
+  <!-- Reset Progress Confirmation Modal -->
   <div id="modal-reset-confirm" class="modal-backdrop hidden" style="z-index:55;">
     <div class="modal-card danger" style="text-align:center;">
       <div style="font-size:11px;letter-spacing:0.22em;color:#fb7185;text-transform:uppercase;font-weight:700;">
@@ -1092,6 +1126,7 @@
 (() => {
   'use strict';
 
+  /* ==================== CONSTANTS & DEFINITIONS ==================== */
   const STORAGE_KEY = 'neon_galaxy_void_striker_save_v2';
   const LEGACY_HIGH_KEY = 'neonGalaxyHigh';
 
@@ -1211,6 +1246,7 @@
     omega_singularity: { name: 'OMEGA SINGULARITY', subtitle: 'Apex Void Entity', color: '#f43f5e', secondary: '#a855f7', baseHp: 3500, radius: 68 }
   };
 
+  /* ==================== PERSISTENT LOCAL STORAGE ==================== */
   function defaultUpgrades() {
     return { speed: 0, health: 0, damage: 0, fireRate: 0, shield: 0 };
   }
@@ -1234,7 +1270,7 @@
       upgrades: { striker: defaultUpgrades(), phantom: defaultUpgrades(), titan: defaultUpgrades(), nova: defaultUpgrades() },
       achievements: [],
       stats: { totalKills: 0, totalBossesDefeated: 0, totalGamesPlayed: 0, totalCoinsEarned: 0, highestWave: 1, highestCombo: 0, totalCrits: 0 },
-      settings: { musicVolume: 0.45, sfxVolume: 0.65, muted: false, controlScheme: 'auto', screenShake: true, autoFire: true, highQualityParticles: true },
+      settings: { musicVolume: 0.45, sfxVolume: 0.65, muted: false, musicTrack: 'dynamic', controlScheme: 'auto', screenShake: true, autoFire: true, highQualityParticles: true },
       savedRun: null
     };
   }
@@ -1309,22 +1345,74 @@
     };
   }
 
+  /* ==================== SKY WAR WEB AUDIO ENGINE ==================== */
   class SoundEngine {
     constructor() {
       this.ctx = null;
       this.master = null;
+      this.compressor = null;
       this.musicGain = null;
+      this.musicFilter = null;
+      this.delayNode = null;
+      this.delayFeedback = null;
+      this.delayWet = null;
       this.sfxGain = null;
+      this.noiseBuffer = null;
       this.musicVol = 0.45;
       this.sfxVol = 0.65;
       this.muted = false;
+      this.trackMode = 'dynamic';
+      this.isDucking = false;
       this.timer = null;
       this.playingMusic = false;
       this.intensity = 'menu';
       this.step = 0;
-      this.bass = [73.42, 73.42, 87.31, 73.42, 65.41, 65.41, 82.41, 69.3];
-      this.arp = [293.66, 349.23, 440, 523.25, 440, 349.23, 293.66, 261.63, 293.66, 349.23, 440, 587.33, 523.25, 440, 349.23, 329.63];
-      this.bossArp = [220, 233.08, 293.66, 349.23, 220, 233.08, 329.63, 440, 196, 220, 293.66, 349.23, 329.63, 293.66, 233.08, 220];
+
+      // Track 1: Sky War Command Briefing (Menu / Atmospheric) - 64 steps (Am - F - C - G)
+      this.menuBass = [55.0, 43.65, 65.41, 49.0];
+      this.menuPad = [
+        [220.0, 261.63, 329.63],
+        [174.61, 220.0, 261.63],
+        [261.63, 329.63, 392.0],
+        [196.0, 246.94, 293.66]
+      ];
+      this.menuArp = [
+        440.0, 523.25, 659.25, 523.25, 440.0, 659.25, 880.0, 659.25,
+        349.23, 440.0, 523.25, 440.0, 349.23, 523.25, 698.46, 523.25,
+        523.25, 659.25, 783.99, 659.25, 523.25, 783.99, 1046.5, 783.99,
+        392.0, 493.88, 587.33, 493.88, 392.0, 587.33, 783.99, 587.33
+      ];
+
+      // Track 2: Sky War Afterburner Assault (High-Energy Combat) - 64 steps (Am - F - Dm/C - G/E)
+      this.combatBassRoots = [55.0, 43.65, 65.41, 49.0];
+      this.combatLead = [
+        440, 0, 523.25, 0, 659.25, 0, 587.33, 523.25, 440, 0, 392.0, 440, 523.25, 0, 659.25, 0,
+        698.46, 0, 659.25, 0, 523.25, 0, 440, 0, 523.25, 0, 587.33, 0, 523.25, 440, 392.0, 0,
+        523.25, 0, 659.25, 0, 783.99, 0, 659.25, 587.33, 523.25, 0, 659.25, 0, 880.0, 0, 783.99, 0,
+        783.99, 0, 659.25, 0, 587.33, 0, 493.88, 587.33, 659.25, 0, 587.33, 523.25, 493.88, 0, 392.0, 0
+      ];
+      this.combatArp = [
+        220, 261.63, 329.63, 440, 174.61, 220, 261.63, 349.23,
+        261.63, 329.63, 392.0, 523.25, 196.0, 246.94, 293.66, 392.0
+      ];
+
+      // Track 3: Starfighter Sky Anthem (Heroic Aerial Dogfight) - 64 steps (Dm - Bb - C - Am/A)
+      this.anthemBassRoots = [73.42, 58.27, 65.41, 55.0];
+      this.anthemLead = [
+        587.33, 0, 587.33, 659.25, 698.46, 0, 659.25, 587.33, 523.25, 0, 440.0, 0, 587.33, 0, 0, 0,
+        466.16, 0, 587.33, 0, 698.46, 0, 783.99, 698.46, 659.25, 0, 587.33, 0, 523.25, 0, 0, 0,
+        523.25, 0, 659.25, 0, 783.99, 0, 880.0, 783.99, 698.46, 0, 659.25, 0, 587.33, 0, 523.25, 0,
+        440.0, 0, 523.25, 587.33, 659.25, 0, 880.0, 0, 830.61, 0, 659.25, 0, 554.37, 0, 440.0, 0
+      ];
+
+      // Track 4: Dreadnought Siege (Boss Encounter) - 64 steps (Em - F - Dm - B/E Phrygian)
+      this.bossBassRoots = [41.2, 43.65, 36.71, 46.25];
+      this.bossLead = [
+        329.63, 349.23, 329.63, 0, 440.0, 0, 493.88, 0, 523.25, 493.88, 440.0, 392.0, 349.23, 0, 329.63, 0,
+        349.23, 392.0, 440.0, 0, 523.25, 0, 587.33, 0, 659.25, 587.33, 523.25, 440.0, 392.0, 0, 349.23, 0,
+        587.33, 0, 523.25, 493.88, 440.0, 0, 349.23, 0, 392.0, 440.0, 493.88, 0, 587.33, 0, 523.25, 0,
+        659.25, 0, 622.25, 0, 587.33, 0, 523.25, 493.88, 466.16, 440.0, 392.0, 349.23, 329.63, 0, 293.66, 0
+      ];
     }
     init() {
       try {
@@ -1332,11 +1420,47 @@
           const AC = window.AudioContext || window.webkitAudioContext;
           if (!AC) return;
           this.ctx = new AC();
+
+          this.compressor = this.ctx.createDynamicsCompressor();
+          this.compressor.threshold.setValueAtTime(-14, this.ctx.currentTime);
+          this.compressor.knee.setValueAtTime(18, this.ctx.currentTime);
+          this.compressor.ratio.setValueAtTime(4, this.ctx.currentTime);
+          this.compressor.attack.setValueAtTime(0.004, this.ctx.currentTime);
+          this.compressor.release.setValueAtTime(0.18, this.ctx.currentTime);
+
           this.master = this.ctx.createGain();
           this.musicGain = this.ctx.createGain();
+          this.musicFilter = this.ctx.createBiquadFilter();
+          this.musicFilter.type = 'lowpass';
+          this.musicFilter.frequency.setValueAtTime(18000, this.ctx.currentTime);
+          this.musicFilter.Q.setValueAtTime(0.9, this.ctx.currentTime);
+
+          this.delayNode = this.ctx.createDelay(1.0);
+          this.delayNode.delayTime.setValueAtTime(0.326, this.ctx.currentTime);
+          this.delayFeedback = this.ctx.createGain();
+          this.delayFeedback.gain.setValueAtTime(0.28, this.ctx.currentTime);
+          this.delayWet = this.ctx.createGain();
+          this.delayWet.gain.setValueAtTime(0.24, this.ctx.currentTime);
+
           this.sfxGain = this.ctx.createGain();
-          this.musicGain.connect(this.master);
-          this.sfxGain.connect(this.master);
+
+          // Cached noise buffer for crisp percussion & explosions
+          const bufLen = this.ctx.sampleRate * 1.2;
+          this.noiseBuffer = this.ctx.createBuffer(1, bufLen, this.ctx.sampleRate);
+          const ch = this.noiseBuffer.getChannelData(0);
+          for (let i = 0; i < bufLen; i++) ch[i] = Math.random() * 2 - 1;
+
+          // Routing: music -> musicFilter -> (dry + delay) -> musicGain -> compressor -> master -> destination
+          this.musicFilter.connect(this.musicGain);
+          this.musicFilter.connect(this.delayNode);
+          this.delayNode.connect(this.delayFeedback);
+          this.delayFeedback.connect(this.delayNode);
+          this.delayNode.connect(this.delayWet);
+          this.delayWet.connect(this.musicGain);
+
+          this.musicGain.connect(this.compressor);
+          this.sfxGain.connect(this.compressor);
+          this.compressor.connect(this.master);
           this.master.connect(this.ctx.destination);
           this.applyVolumes();
         }
@@ -1347,6 +1471,7 @@
       this.musicVol = s.musicVolume;
       this.sfxVol = s.sfxVolume;
       this.muted = s.muted;
+      this.trackMode = s.musicTrack || 'dynamic';
       this.applyVolumes();
     }
     applyVolumes() {
@@ -1354,60 +1479,217 @@
       try {
         const now = this.ctx.currentTime;
         this.master.gain.setTargetAtTime(this.muted ? 0 : 1, now, 0.02);
-        this.musicGain.gain.setTargetAtTime(this.musicVol * 0.28, now, 0.04);
-        this.sfxGain.gain.setTargetAtTime(this.sfxVol * 0.65, now, 0.02);
+        this.musicGain.gain.setTargetAtTime(this.musicVol * 0.44, now, 0.04);
+        this.sfxGain.gain.setTargetAtTime(this.sfxVol * 0.68, now, 0.02);
+        if (this.musicFilter) {
+          this.musicFilter.frequency.setTargetAtTime(this.isDucking ? 460 : 18000, now, 0.08);
+        }
       } catch (_) {}
+    }
+    setPausedDuck(duck) {
+      this.isDucking = !!duck;
+      if (this.ctx && this.musicFilter) {
+        try {
+          this.musicFilter.frequency.setTargetAtTime(this.isDucking ? 460 : 18000, this.ctx.currentTime, 0.08);
+        } catch (_) {}
+      }
     }
     startMusic() {
       this.init();
       if (this.playingMusic) return;
       this.playingMusic = true;
       if (this.timer) clearInterval(this.timer);
-      this.timer = setInterval(() => this.tickMusic(), 150);
+      // 138 BPM 16th-note pulse (~108.7ms per step)
+      this.timer = setInterval(() => this.tickMusic(), 109);
     }
-    setIntensity(m) { this.intensity = m; }
+    setIntensity(m) {
+      this.intensity = m;
+    }
+    getActiveTrack() {
+      if (this.trackMode === 'afterburner') return 'afterburner';
+      if (this.trackMode === 'anthem') return 'anthem';
+      if (this.trackMode === 'siege') return 'siege';
+      if (this.intensity === 'boss') return 'siege';
+      if (this.intensity === 'combat') return (typeof wave !== 'undefined' && wave % 2 === 0) ? 'anthem' : 'afterburner';
+      return 'briefing';
+    }
+    playKick(at, punch) {
+      const o = this.ctx.createOscillator(), g = this.ctx.createGain();
+      o.type = 'sine';
+      o.frequency.setValueAtTime(150, at);
+      o.frequency.exponentialRampToValueAtTime(38, at + 0.095);
+      g.gain.setValueAtTime(punch, at);
+      g.gain.exponentialRampToValueAtTime(0.001, at + 0.12);
+      o.connect(g); g.connect(this.musicFilter);
+      o.start(at); o.stop(at + 0.13);
+    }
+    playSnare(at, level) {
+      if (this.noiseBuffer) {
+        const src = this.ctx.createBufferSource();
+        src.buffer = this.noiseBuffer;
+        const flt = this.ctx.createBiquadFilter();
+        flt.type = 'bandpass';
+        flt.frequency.setValueAtTime(1950, at);
+        flt.Q.setValueAtTime(0.8, at);
+        const g = this.ctx.createGain();
+        g.gain.setValueAtTime(level, at);
+        g.gain.exponentialRampToValueAtTime(0.001, at + 0.13);
+        src.connect(flt); flt.connect(g); g.connect(this.musicFilter);
+        src.start(at); src.stop(at + 0.14);
+      }
+      const o = this.ctx.createOscillator(), g2 = this.ctx.createGain();
+      o.type = 'triangle';
+      o.frequency.setValueAtTime(195, at);
+      o.frequency.exponentialRampToValueAtTime(92, at + 0.07);
+      g2.gain.setValueAtTime(level * 0.75, at);
+      g2.gain.exponentialRampToValueAtTime(0.001, at + 0.08);
+      o.connect(g2); g2.connect(this.musicFilter);
+      o.start(at); o.stop(at + 0.09);
+    }
+    playHiHat(at, open, level) {
+      if (!this.noiseBuffer) return;
+      const src = this.ctx.createBufferSource();
+      src.buffer = this.noiseBuffer;
+      const flt = this.ctx.createBiquadFilter();
+      flt.type = 'highpass';
+      flt.frequency.setValueAtTime(7200, at);
+      const dur = open ? 0.11 : 0.038;
+      const g = this.ctx.createGain();
+      g.gain.setValueAtTime(level, at);
+      g.gain.exponentialRampToValueAtTime(0.001, at + dur);
+      src.connect(flt); flt.connect(g); g.connect(this.musicFilter);
+      src.start(at); src.stop(at + dur + 0.01);
+    }
+    playPadChord(freqs, at, dur, gainLvl) {
+      for (let i = 0; i < freqs.length; i++) {
+        const o = this.ctx.createOscillator(), flt = this.ctx.createBiquadFilter(), g = this.ctx.createGain();
+        o.type = 'sawtooth';
+        o.frequency.setValueAtTime(freqs[i], at);
+        o.detune.setValueAtTime((i - 1) * 6, at);
+        flt.type = 'lowpass';
+        flt.frequency.setValueAtTime(920, at);
+        flt.frequency.exponentialRampToValueAtTime(480, at + dur);
+        g.gain.setValueAtTime(0.001, at);
+        g.gain.linearRampToValueAtTime(gainLvl, at + 0.22);
+        g.gain.exponentialRampToValueAtTime(0.001, at + dur);
+        o.connect(flt); flt.connect(g); g.connect(this.musicFilter);
+        o.start(at); o.stop(at + dur + 0.02);
+      }
+    }
+    playSynthBass(freq, at, dur, cutoff, lvl) {
+      const o = this.ctx.createOscillator(), flt = this.ctx.createBiquadFilter(), g = this.ctx.createGain();
+      o.type = 'sawtooth';
+      o.frequency.setValueAtTime(freq, at);
+      flt.type = 'lowpass';
+      flt.frequency.setValueAtTime(cutoff, at);
+      flt.frequency.exponentialRampToValueAtTime(110, at + dur);
+      flt.Q.setValueAtTime(3.2, at);
+      g.gain.setValueAtTime(0.001, at);
+      g.gain.linearRampToValueAtTime(lvl, at + 0.008);
+      g.gain.exponentialRampToValueAtTime(0.001, at + dur);
+      o.connect(flt); flt.connect(g); g.connect(this.musicFilter);
+      o.start(at); o.stop(at + dur + 0.015);
+    }
+    playHeroicLead(freq, at, dur, waveType, lvl) {
+      for (let d = -1; d <= 1; d += 2) {
+        const o = this.ctx.createOscillator(), flt = this.ctx.createBiquadFilter(), g = this.ctx.createGain();
+        o.type = waveType;
+        o.frequency.setValueAtTime(freq, at);
+        o.detune.setValueAtTime(d * 7, at);
+        flt.type = 'lowpass';
+        flt.frequency.setValueAtTime(2800, at);
+        flt.frequency.exponentialRampToValueAtTime(1150, at + dur);
+        g.gain.setValueAtTime(0.001, at);
+        g.gain.linearRampToValueAtTime(lvl, at + 0.012);
+        g.gain.exponentialRampToValueAtTime(0.001, at + dur);
+        o.connect(flt); flt.connect(g); g.connect(this.musicFilter);
+        o.start(at); o.stop(at + dur + 0.02);
+      }
+    }
     tickMusic() {
       if (!this.ctx || this.ctx.state !== 'running' || this.muted || this.musicVol <= 0.01) return;
       try {
         const now = this.ctx.currentTime;
-        const s = this.step % 16;
-        if (s % 2 === 0) {
-          const f = this.bass[Math.floor(s / 2) % this.bass.length];
-          const o = this.ctx.createOscillator(), flt = this.ctx.createBiquadFilter(), g = this.ctx.createGain();
-          o.type = 'sawtooth';
-          o.frequency.setValueAtTime(this.intensity === 'boss' ? f * 0.9438 : f, now);
-          flt.type = 'lowpass';
-          flt.frequency.setValueAtTime(this.intensity === 'menu' ? 260 : 520, now);
-          flt.frequency.exponentialRampToValueAtTime(140, now + 0.22);
-          g.gain.setValueAtTime(0.001, now);
-          g.gain.linearRampToValueAtTime(this.intensity === 'menu' ? 0.24 : 0.36, now + 0.015);
-          g.gain.exponentialRampToValueAtTime(0.001, now + 0.26);
-          o.connect(flt); flt.connect(g); g.connect(this.musicGain);
-          o.start(now); o.stop(now + 0.28);
+        const s = this.step % 64;
+        const bar = Math.floor(s / 16);
+        const stepInBar = s % 16;
+        const track = this.getActiveTrack();
+
+        if (track === 'briefing') {
+          // Atmospheric Sky War Briefing Theme
+          if (stepInBar === 0) {
+            this.playPadChord(this.menuPad[bar], now, 1.72, 0.055);
+          }
+          if (stepInBar % 4 === 0) {
+            this.playSynthBass(this.menuBass[bar], now, 0.36, 420, 0.16);
+          }
+          if (stepInBar % 2 === 0) {
+            const note = this.menuArp[(bar * 8 + Math.floor(stepInBar / 2)) % this.menuArp.length];
+            const o = this.ctx.createOscillator(), g = this.ctx.createGain();
+            o.type = 'triangle';
+            o.frequency.setValueAtTime(note, now);
+            g.gain.setValueAtTime(0.001, now);
+            g.gain.linearRampToValueAtTime(0.075, now + 0.012);
+            g.gain.exponentialRampToValueAtTime(0.001, now + 0.19);
+            o.connect(g); g.connect(this.musicFilter);
+            o.start(now); o.stop(now + 0.2);
+          }
+          if (stepInBar % 8 === 0) this.playKick(now, 0.18);
+          if (stepInBar % 4 === 2) this.playHiHat(now, false, 0.04);
+        } else if (track === 'siege') {
+          // Dreadnought Siege: urgent double-kick & dark brass lead
+          if (stepInBar === 0) {
+            const root = this.bossBassRoots[bar];
+            this.playPadChord([root * 4, root * 4.7568, root * 6], now, 1.65, 0.045);
+          }
+          const bRoot = this.bossBassRoots[bar];
+          const bFreq = stepInBar % 2 === 0 ? bRoot : bRoot * 2;
+          this.playSynthBass(bFreq, now, 0.1, 880, 0.24);
+
+          if (stepInBar % 4 === 0 || stepInBar === 14) this.playKick(now, 0.36);
+          if (stepInBar === 4 || stepInBar === 12 || (bar === 3 && stepInBar === 15)) this.playSnare(now, 0.22);
+          this.playHiHat(now, stepInBar % 4 === 2, stepInBar % 2 === 0 ? 0.09 : 0.045);
+
+          const leadFreq = this.bossLead[s];
+          if (leadFreq > 0) this.playHeroicLead(leadFreq, now, 0.18, 'sawtooth', 0.075);
+        } else {
+          // High-Energy Sky War Combat ('afterburner' or 'anthem')
+          const roots = track === 'anthem' ? this.anthemBassRoots : this.combatBassRoots;
+          const leadBank = track === 'anthem' ? this.anthemLead : this.combatLead;
+          const root = roots[bar];
+
+          if (stepInBar === 0) {
+            this.playPadChord([root * 4, root * 4.7568, root * 6], now, 1.68, 0.042);
+          }
+          // Driving 16th-note octave synthwave bass
+          const bassFreq = stepInBar % 2 === 0 ? root : root * 2;
+          this.playSynthBass(bassFreq, now, 0.095, 760, 0.22);
+
+          // Punchy Sky War drums + bar 4 fill
+          if (stepInBar % 4 === 0) this.playKick(now, 0.33);
+          if (stepInBar === 4 || stepInBar === 12 || (bar === 3 && (stepInBar === 14 || stepInBar === 15))) {
+            this.playSnare(now, 0.19);
+          }
+          this.playHiHat(now, stepInBar % 4 === 2, stepInBar % 2 === 1 ? 0.075 : 0.038);
+
+          // Soaring Heroic Sky War Lead
+          const leadNote = leadBank[s];
+          if (leadNote > 0) {
+            this.playHeroicLead(leadNote, now, 0.21, track === 'anthem' ? 'square' : 'sawtooth', 0.068);
+          } else if (stepInBar % 2 === 1) {
+            // Subtle background shimmer arp between melody notes
+            const arpFreq = this.combatArp[(bar * 4 + Math.floor(stepInBar / 4)) % this.combatArp.length] * 2;
+            const o = this.ctx.createOscillator(), g = this.ctx.createGain();
+            o.type = 'triangle';
+            o.frequency.setValueAtTime(arpFreq, now);
+            g.gain.setValueAtTime(0.001, now);
+            g.gain.linearRampToValueAtTime(0.045, now + 0.008);
+            g.gain.exponentialRampToValueAtTime(0.001, now + 0.09);
+            o.connect(g); g.connect(this.musicFilter);
+            o.start(now); o.stop(now + 0.1);
+          }
         }
-        if (this.intensity !== 'menu' || s % 4 === 0) {
-          const bank = this.intensity === 'boss' ? this.bossArp : this.arp;
-          const o = this.ctx.createOscillator(), g = this.ctx.createGain();
-          o.type = this.intensity === 'boss' ? 'square' : 'triangle';
-          o.frequency.setValueAtTime(bank[s % bank.length], now);
-          const pk = this.intensity === 'menu' ? 0.09 : this.intensity === 'boss' ? 0.16 : 0.13;
-          g.gain.setValueAtTime(0.001, now);
-          g.gain.linearRampToValueAtTime(pk, now + 0.01);
-          g.gain.exponentialRampToValueAtTime(0.001, now + 0.13);
-          o.connect(g); g.connect(this.musicGain);
-          o.start(now); o.stop(now + 0.14);
-        }
-        if (this.intensity !== 'menu' && s % 4 === 0) {
-          const o = this.ctx.createOscillator(), g = this.ctx.createGain();
-          o.type = 'sine';
-          o.frequency.setValueAtTime(125, now);
-          o.frequency.exponentialRampToValueAtTime(36, now + 0.11);
-          g.gain.setValueAtTime(0.32, now);
-          g.gain.exponentialRampToValueAtTime(0.001, now + 0.12);
-          o.connect(g); g.connect(this.musicGain);
-          o.start(now); o.stop(now + 0.13);
-        }
-        this.step++;
+        this.step = (this.step + 1) % 64;
       } catch (_) {}
     }
     play(type) {
@@ -1459,6 +1741,7 @@
   }
   const soundEngine = new SoundEngine();
 
+  /* ==================== OBJECT POOL ==================== */
   class ObjectPool {
     constructor(factory, reset, initSize = 64, maxSize = 1400) {
       this.factory = factory;
@@ -1471,6 +1754,7 @@
     release(item) { this.reset(item); if (this.items.length < this.maxSize) this.items.push(item); }
   }
 
+  /* ==================== CANVAS RENDER HELPERS ==================== */
   function drawRoundedRectPath(ctx, x, y, w, h, r) {
     const rad = Math.min(r, w / 2, h / 2);
     ctx.beginPath();
@@ -1594,7 +1878,9 @@
     ctx.restore();
   }
 
+  /* ==================== MAIN GAME APPLICATION ==================== */
   let saveData = loadSave();
+  let currentScreen = 'loading';
   let inspectShip = saveData.selectedShip;
   let bannerTimer = null;
   let pauseTriggeredByModal = false;
@@ -1605,6 +1891,7 @@
   const menuPreviewCanvas = document.getElementById('menuShipPreview');
   const garagePreviewCanvas = document.getElementById('garageShipPreview');
 
+  // Engine state
   let width = 900, height = 700, dpr = 1;
   let rafId = null, lastTs = 0, elapsedTime = 0;
   let running = false, paused = false, ambientMode = true;
@@ -1693,6 +1980,7 @@
     bannerTimer = setTimeout(() => c.classList.add('hidden'), 2500);
   }
 
+  /* ==================== SCREEN NAVIGATION ==================== */
   const SCREEN_IDS = ['screen-menu', 'screen-modes', 'screen-garage', 'screen-achievements', 'game-hud'];
 
   function showScreen(id) {
@@ -1962,6 +2250,12 @@
     document.getElementById('set-music-val').textContent = `${Math.round(s.musicVolume * 100)}%`;
     document.getElementById('set-sfx-range').value = Math.round(s.sfxVolume * 100);
     document.getElementById('set-sfx-val').textContent = `${Math.round(s.sfxVolume * 100)}%`;
+    document.querySelectorAll('.set-track-btn').forEach(b => {
+      const active = b.dataset.track === (s.musicTrack || 'dynamic');
+      b.style.borderColor = active ? '#00f3ff' : '';
+      b.style.color = active ? '#a5f3fc' : '';
+      b.style.background = active ? 'rgba(8, 51, 68, 0.55)' : '';
+    });
     document.querySelectorAll('.set-scheme-btn').forEach(b => {
       const active = b.dataset.scheme === s.controlScheme;
       b.style.borderColor = active ? '#00f3ff' : '';
@@ -1978,6 +2272,7 @@
     setToggle('btn-set-particles', s.highQualityParticles);
   }
 
+  /* ==================== GAMEPLAY ENGINE ==================== */
   function calcQuota(w) { return mode === 'time_attack' ? 14 + w * 3 : 10 + w * 4; }
 
   function saveActiveRunCheckpoint() {
@@ -2056,6 +2351,7 @@
 
     soundEngine.init();
     soundEngine.startMusic();
+    soundEngine.setPausedDuck(false);
     soundEngine.setIntensity('combat');
 
     showScreen('game-hud');
@@ -2258,6 +2554,7 @@
   function finishRun(victory) {
     running = false;
     paused = false;
+    soundEngine.setPausedDuck(false);
     soundEngine.setIntensity('menu');
     soundEngine.play(victory ? 'victory' : 'gameover');
 
@@ -2291,6 +2588,7 @@
   }
 
   function update(dt) {
+    // Background
     const bgSpd = ambientMode ? 0.5 : 1 + (wave - 1) * 0.07;
     for (let i = 0; i < stars.length; i++) {
       stars[i].y += stars[i].speed * bgSpd * dt;
@@ -2314,6 +2612,7 @@
       if (comboTimer <= 0) { combo = 1; comboTimer = 0; }
     }
 
+    // Player movement
     let mx = 0, my = 0;
     if (keys.ArrowLeft || keys.KeyA) mx -= 1;
     if (keys.ArrowRight || keys.KeyD) mx += 1;
@@ -2355,6 +2654,7 @@
       spawnParticle(player.x + (Math.random() - 0.5) * 10, player.y + 19, (Math.random() - 0.5) * 28, 85 + Math.random() * 65, 1.8, SHIPS[saveData.selectedShip].engineColor, 2.6, 'circle');
     }
 
+    // Boss delay & Spawning
     if (pendingBossWave > 0) {
       bossSpawnDelay -= dt;
       if (bossSpawnDelay <= 0) {
@@ -2406,6 +2706,7 @@
       }
     }
 
+    // Bullets
     const hFactor = mode === 'challenge' && challengeMod === 'hyper_velocity' ? 1.35 : 1;
     for (let i = bullets.length - 1; i >= 0; i--) {
       const b = bullets[i];
@@ -2439,6 +2740,7 @@
       }
     }
 
+    // Enemies
     const destroyEnemy = (e, idx) => {
       soundEngine.play('explosion');
       createExplosion(e.x, e.y, e.color, 24);
@@ -2533,6 +2835,7 @@
       if (e.y > height + 50) enemies.splice(i, 1);
     }
 
+    // Boss Update
     if (boss) {
       const b = boss;
       b.age += dt;
@@ -2644,6 +2947,7 @@
       }
     }
 
+    // Asteroids, Powerups, Coins, Particles
     for (let i = asteroids.length - 1; i >= 0; i--) {
       const a = asteroids[i];
       a.x += a.vx * dt; a.y += a.vy * dt; a.angle += a.vRot * dt;
@@ -2897,6 +3201,7 @@
       });
     }
 
+    // Mini ship previews when menu/garage visible
     if (!document.getElementById('screen-menu').classList.contains('hidden')) {
       const mctx = menuPreviewCanvas.getContext('2d');
       mctx.clearRect(0, 0, 104, 104);
@@ -2923,11 +3228,13 @@
     rafId = requestAnimationFrame(tick);
   }
 
+  /* ==================== RESET PROGRESS MODAL & PAUSE ==================== */
   function openResetModal() {
     soundEngine.play('menuClick');
     if (running && !paused) {
       paused = true;
       pauseTriggeredByModal = true;
+      soundEngine.setPausedDuck(true);
     } else {
       pauseTriggeredByModal = false;
     }
@@ -2939,6 +3246,7 @@
     document.getElementById('modal-reset-confirm').classList.add('hidden');
     if (resumeIfNeeded && pauseTriggeredByModal && running) {
       paused = false;
+      soundEngine.setPausedDuck(false);
       lastTs = performance.now();
     }
     pauseTriggeredByModal = false;
@@ -2958,6 +3266,7 @@
     paused = false;
     ambientMode = true;
     clearEntities();
+    soundEngine.setPausedDuck(false);
     soundEngine.setIntensity('menu');
     refreshMenuUI();
     renderModesScreen();
@@ -2968,6 +3277,7 @@
     showBanner('PROGRESS RESET', 'All saved data wiped back to defaults', '#fb7185');
   }
 
+  /* ==================== EVENT BINDINGS ==================== */
   window.addEventListener('resize', resize);
   window.addEventListener('keydown', e => {
     keys[e.code] = true;
@@ -2977,8 +3287,8 @@
     if (!running || ambientMode) return;
     if (e.code === 'Escape' || e.code === 'KeyP') {
       e.preventDefault();
-      if (paused) { paused = false; lastTs = performance.now(); document.getElementById('modal-pause').classList.add('hidden'); updateMobileControlsVisibility(); }
-      else { paused = true; saveActiveRunCheckpoint(); document.getElementById('modal-pause').classList.remove('hidden'); updateMobileControlsVisibility(); }
+      if (paused) { paused = false; soundEngine.setPausedDuck(false); lastTs = performance.now(); document.getElementById('modal-pause').classList.add('hidden'); updateMobileControlsVisibility(); }
+      else { paused = true; soundEngine.setPausedDuck(true); saveActiveRunCheckpoint(); document.getElementById('modal-pause').classList.remove('hidden'); updateMobileControlsVisibility(); }
     } else if (e.code === 'Digit1') { player.weapon = 'laser'; syncHud(); }
     else if (e.code === 'Digit2') { player.weapon = 'plasma'; syncHud(); }
     else if (e.code === 'Digit3') { player.weapon = 'spread'; syncHud(); }
@@ -2987,7 +3297,7 @@
   window.addEventListener('keyup', e => { keys[e.code] = false; });
   document.addEventListener('visibilitychange', () => {
     if (document.hidden && running && !paused && !ambientMode) {
-      paused = true; saveActiveRunCheckpoint();
+      paused = true; soundEngine.setPausedDuck(true); saveActiveRunCheckpoint();
       document.getElementById('modal-pause').classList.remove('hidden');
       updateMobileControlsVisibility();
     }
@@ -3006,6 +3316,7 @@
   }, { passive: false });
   canvas.addEventListener('touchend', () => { pointerActive = false; });
 
+  // Virtual Joystick & Fire Pad
   const joyPad = document.getElementById('joy-pad'), joyKnob = document.getElementById('joy-knob');
   let joyPid = null;
   const updateJoy = (cx, cy) => {
@@ -3026,6 +3337,7 @@
   const endFire = () => { touchFireActive = false; fireBtn.classList.remove('active'); };
   fireBtn.addEventListener('pointerup', endFire); fireBtn.addEventListener('pointercancel', endFire);
 
+  // UI Click Handlers
   document.getElementById('btn-start-game').addEventListener('click', () => { soundEngine.play('menuClick'); startGame(saveData.selectedMode, false); });
   document.getElementById('btn-continue-run').addEventListener('click', () => { soundEngine.play('menuClick'); startGame(saveData.selectedMode, true); });
   document.getElementById('btn-open-modes').addEventListener('click', () => { soundEngine.play('menuClick'); renderModesScreen(); showScreen('screen-modes'); });
@@ -3049,11 +3361,11 @@
     soundEngine.updateSettings(saveData.settings); persistSave(saveData); syncHud();
   });
   document.getElementById('btn-hud-pause').addEventListener('click', () => {
-    soundEngine.play('menuClick'); paused = true; saveActiveRunCheckpoint();
+    soundEngine.play('menuClick'); paused = true; soundEngine.setPausedDuck(true); saveActiveRunCheckpoint();
     document.getElementById('modal-pause').classList.remove('hidden'); updateMobileControlsVisibility();
   });
   document.getElementById('btn-pause-resume').addEventListener('click', () => {
-    soundEngine.play('menuClick'); paused = false; lastTs = performance.now();
+    soundEngine.play('menuClick'); paused = false; soundEngine.setPausedDuck(false); lastTs = performance.now();
     document.getElementById('modal-pause').classList.add('hidden'); updateMobileControlsVisibility();
   });
   document.getElementById('btn-pause-restart').addEventListener('click', () => { soundEngine.play('menuClick'); startGame(mode, false); });
@@ -3061,6 +3373,7 @@
   document.getElementById('btn-pause-menu').addEventListener('click', () => {
     soundEngine.play('menuClick'); saveActiveRunCheckpoint();
     running = false; paused = false; ambientMode = true; clearEntities();
+    soundEngine.setPausedDuck(false);
     soundEngine.setIntensity('menu'); refreshMenuUI(); showScreen('screen-menu');
   });
 
@@ -3068,15 +3381,34 @@
   document.getElementById('btn-end-garage').addEventListener('click', () => { soundEngine.play('menuClick'); ambientMode = true; renderGarageScreen(); showScreen('screen-garage'); });
   document.getElementById('btn-end-menu').addEventListener('click', () => { soundEngine.play('menuClick'); ambientMode = true; refreshMenuUI(); showScreen('screen-menu'); });
 
+  // Settings Handlers
   document.getElementById('btn-settings-done').addEventListener('click', () => { soundEngine.play('menuClick'); document.getElementById('modal-settings').classList.add('hidden'); });
   document.getElementById('btn-set-mute').addEventListener('click', () => { saveData.settings.muted = !saveData.settings.muted; soundEngine.updateSettings(saveData.settings); persistSave(saveData); syncSettingsModal(); });
   document.getElementById('set-music-range').addEventListener('input', e => { saveData.settings.musicVolume = Number(e.target.value) / 100; soundEngine.updateSettings(saveData.settings); persistSave(saveData); syncSettingsModal(); });
   document.getElementById('set-sfx-range').addEventListener('input', e => { saveData.settings.sfxVolume = Number(e.target.value) / 100; soundEngine.updateSettings(saveData.settings); persistSave(saveData); syncSettingsModal(); });
+  document.querySelectorAll('.set-track-btn').forEach(b => b.addEventListener('click', () => {
+    saveData.settings.musicTrack = b.dataset.track;
+    soundEngine.updateSettings(saveData.settings);
+    soundEngine.startMusic();
+    soundEngine.play('menuClick');
+    persistSave(saveData);
+    syncSettingsModal();
+  }));
   document.querySelectorAll('.set-scheme-btn').forEach(b => b.addEventListener('click', () => { saveData.settings.controlScheme = b.dataset.scheme; persistSave(saveData); syncSettingsModal(); updateMobileControlsVisibility(); }));
   document.getElementById('btn-set-autofire').addEventListener('click', () => { saveData.settings.autoFire = !saveData.settings.autoFire; persistSave(saveData); syncSettingsModal(); });
   document.getElementById('btn-set-shake').addEventListener('click', () => { saveData.settings.screenShake = !saveData.settings.screenShake; persistSave(saveData); syncSettingsModal(); });
   document.getElementById('btn-set-particles').addEventListener('click', () => { saveData.settings.highQualityParticles = !saveData.settings.highQualityParticles; persistSave(saveData); syncSettingsModal(); });
 
+  // Unlock & start atmospheric Sky War music on first interaction
+  const unlockAudioOnce = () => {
+    soundEngine.startMusic();
+    window.removeEventListener('pointerdown', unlockAudioOnce);
+    window.removeEventListener('keydown', unlockAudioOnce);
+  };
+  window.addEventListener('pointerdown', unlockAudioOnce, { passive: true });
+  window.addEventListener('keydown', unlockAudioOnce, { passive: true });
+
+  // Reset Progress Triggers + Modal Handlers
   document.getElementById('btn-reset-menu').addEventListener('click', openResetModal);
   document.getElementById('btn-hud-reset').addEventListener('click', openResetModal);
   document.getElementById('btn-pause-reset').addEventListener('click', openResetModal);
@@ -3087,6 +3419,7 @@
     if (e.target.id === 'modal-reset-confirm') closeResetModal(true);
   });
 
+  /* ==================== BOOT SEQUENCE ==================== */
   resize();
   initBackground();
   soundEngine.updateSettings(saveData.settings);
